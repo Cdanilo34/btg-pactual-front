@@ -1,0 +1,60 @@
+
+<div class="container">
+
+  <h2>Fondos Disponibles</h2>
+<table>
+  <thead>
+    <tr>
+      <th>Nombre del Fondo</th>
+      <th>Monto Mínimo</th>
+      <th>Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let fondo of fondosDisponibles">
+      <td>{{ fondo.nombre }}</td>
+      <td>{{ fondo.montoMinimo | currency:'COP':'symbol' }}</td>
+      <td><button (click)="suscribirFondo(fondo.id)">Suscribirse</button></td>
+    </tr>
+  </tbody>
+</table>
+<br>
+<h2>Información del Cliente</h2>
+<div *ngIf="cliente">
+  <table>
+    <tr>
+      <td><strong>Nombre:</strong></td>
+      <td>{{ cliente.nombre }}</td>
+    </tr>
+    <tr>
+      <td><strong>Email:</strong></td>
+      <td>{{ cliente.email }}</td>
+    </tr>
+    <tr>
+      <td><strong>Saldo Actual:</strong></td>
+      <td>COP {{ cliente.saldo | currency:'COP':'symbol' }}</td>
+    </tr>
+  </table>
+</div>
+<br>
+<h2>Mis Suscripciones</h2>
+<table>
+  <thead>
+    <tr>
+      <th>ID del Fondo</th>
+      <th>Nombre del Fondo</th>
+      <th>Monto Vinculado</th>
+      <th>Acción</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let fondo of fondosSuscritos">
+      <td>{{ fondo.fondoId }}</td>
+      <td>{{ fondo.nombreFondo }}</td>
+      <td>{{ fondo.montoVinculacion | currency:'COP':'symbol' }}</td>
+      <td><button (click)="cancelarFondo(fondo.fondoId)">Cancelar</button></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>

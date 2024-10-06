@@ -1,0 +1,25 @@
+<h2>Historial de Transacciones</h2>
+<ul>
+
+  <table>
+  <thead>
+    <tr>
+      <th>Tipo de Transacción   </th>
+      <th>ID del Cliente  </th>
+      <th>ID del Fondo  </th>
+      <th>Monto </th>
+      <th>Fecha </th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let transaccion of transacciones">
+      <td>{{ transaccion.tipoTransaccion }}</td>
+      <td>{{ transaccion.clienteId }}</td>
+      <td>{{ transaccion.fondoId }}</td>
+      <td>{{ transaccion.monto }}</td>
+      <td>{{ transaccion.fecha | date:'dd/MM/yyyy HH:mm' }}</td>  
+    </tr>
+  </tbody>
+</table>
+
+</ul>
