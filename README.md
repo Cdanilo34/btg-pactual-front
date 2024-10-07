@@ -39,7 +39,7 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
   this.http.get(`${this.apiBase}/fondos/list`)
 
-  this.http.get(`${this.apiBase}/transaccion/historial`)
+  this.http.get(`${this.apiBase}/transacciones`)
 
 ## Instalación y Ejecución
  ## Backend
@@ -52,10 +52,6 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
  mvn spring-boot:run
 
 El backend estará disponible en http://localhost:8080
-
-Clonar el repositorio del frontend:
-
-git clone https://github.com/Cdanilo34/btg-pactual-front
 
 ## Frontend
 Clonar el repositorio del frontend:
