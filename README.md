@@ -28,21 +28,53 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 
 # BTG Pactual Fondos - Plataforma de Gestión
 
-Esta aplicación permite a los clientes de **BTG Pactual** gestionar sus suscripciones a Fondos Voluntarios de Pensión (FPV) y Fondos de Inversión Colectiva (FIC). Los clientes pueden suscribirse a nuevos fondos, cancelar suscripciones actuales, ver el historial de transacciones y recibir notificaciones por email o SMS.
-
-## Características Principales
-
-- **Suscripción a Fondos:** Los clientes pueden suscribirse a los fondos disponibles si tienen saldo suficiente.
-- **Cancelación de Fondos:** Los clientes pueden cancelar su suscripción a los fondos y el monto de vinculación será devuelto.
-- **Historial de Transacciones:** Se puede ver el historial de suscripciones y cancelaciones.
-- **Notificaciones:** Se envía una notificación al cliente por email o SMS después de una suscripción o cancelación.
-- **Validación de Saldo Insuficiente:** Si el cliente no tiene saldo suficiente para suscribirse a un fondo, se mostrará un mensaje con la descripción del error.
-
-## Endpoints
-
-El backend está implementado usando **Spring Boot** y expone los siguientes endpoints:
+## Endpoints (Frontend)
 
 - **Suscripción a un fondo:**
 
-  ```http
-  POST /api/fondos/suscripcion/{clienteId}/{fondoId}
+  ```typescript
+  this.http.post(`${this.apiBase}/suscripcion/${clienteId}/${fondoId}`, {})
+
+  this.http.post(`${this.apiBase}/cancelacion/${clienteId}/${fondoId}`, {})
+
+  this.http.get(`${this.apiBase}/fondos/list`)
+
+  this.http.get(`${this.apiBase}/transaccion/historial`)
+
+## Instalación y Ejecución
+ ## Backend
+ Clonar el repositorio del backend:
+
+ git clone https://github.com/Cdanilo34/bgt-pactual-back
+
+ cd bgt-pactual-back
+
+ mvn spring-boot:run
+
+El backend estará disponible en http://localhost:8080
+
+Clonar el repositorio del frontend:
+
+git clone https://github.com/Cdanilo34/btg-pactual-front
+
+## Frontend
+Clonar el repositorio del frontend:
+
+git clone https://github.com/Cdanilo34/btg-pactual-front
+
+Navegar al directorio del frontend:
+
+cd btg-pactual-front
+
+Instalar las dependencias:
+
+npm install --force
+
+npm start
+
+El frontend estará disponible en http://localhost:4200.
+
+## Requisitos
+Java 17 para ejecutar el backend.
+Node.js y npm para ejecutar el frontend.
+MongoDB para almacenar los datos de los clientes, fondos y transacciones.
